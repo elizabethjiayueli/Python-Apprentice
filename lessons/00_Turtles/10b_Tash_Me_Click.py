@@ -28,7 +28,7 @@ def set_background_image(window, image_name):
                     # Tell Python we want to work with the turtle
 turtle.setup(width=600, height=600)     # Set the size of the window
 
-screen = turtle.Turtle()                  # Create a turtle named tina
+t = turtle.Turtle()                  # Create a turtle named tina
 
 screen = turtle.Screen()                # Get the screen that tina is on
 set_background_image(screen, "emoji.png") # Set the background image of the screen
@@ -51,7 +51,7 @@ screen = turtle.Screen()
 screen.setup(width=600, height=600)
 
 # Create a turtle and set its shape to the custom GIF
-t = turtle.Turtle()
+#t = turtle.Turtle()
 
 set_turtle_image(t, "moustache1.gif")
 
@@ -74,17 +74,17 @@ screen = turtle.Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor('white')
 
-screen.penup()
-set_turtle_image("moustache1.gif")
+t.penup()
+
 
 # This is the function that gets called when you click on the screen
 def screen_clicked(x, y):
     """Print the x and y coordinates of the screen when clicked.
     and make the turtle move to the clicked location."""
 
-    print('You pressed: x=' + str(x) + ', y=' + str(y))
+    #print('You pressed: x=' + str(x) + ', y=' + str(y))
 
-    screen.goto(x, y)
+    t.goto(x, y)
   
 screen.onclick(screen_clicked) # Impo
-turtle.done()      
+turtle.done()    

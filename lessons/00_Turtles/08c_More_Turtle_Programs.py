@@ -42,7 +42,7 @@ screen.setup(width=600, height=600)
 t = turtle.Turtle()
 
 set_turtle_image(t, "pikachu.gif")
-
+t.tilt()
 t.penup()
 t.speed(2)
 t.goto(200, 200)

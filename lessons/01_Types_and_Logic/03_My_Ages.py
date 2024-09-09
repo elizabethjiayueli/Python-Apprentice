@@ -5,12 +5,12 @@ Am I Big Yet?
 Ask the user's age then use an if-elif-else statement to 
 tell the user what age groups the user is in. The groups are:
 
-0-2: Baby
-3-5: Toddler
-6-12: Child
-13-19: Teen
-20-64: Adult
-65+: Senior
+0-2 = Baby
+3-5 = Toddler
+6-12 = Child
+13-19 = Teen
+20-64 = Adult
+65-120 = Senior
 
 Except, if the user is the same age as you, print "You are pretty awesome!"
 
@@ -37,16 +37,41 @@ window = Tk()     # Create a window object
 window.withdraw() # Hide the window; we just want to see pop ups
 
 # Ask the user's age
-
+age = simpledialog.askinteger("Your Age", "How old are you?")
 # Use if statements to determine the age group
 # and create a message
+
 
 # Show the message to the user
 
 
 
-window.mainloop()  # Keeps the window open
+  # Keeps the window open
 
 
-# TODO: 
+ #TODO: 
 # Try to write your program so you only need to use one messagebox.showinfo() function.
+if age < 0:
+    messagebox.showinfo('what you are', "I am sorry. Whatever you are, you are not human. The FBI is coming.")
+elif age < 2:
+    messagebox.showinfo('what you are', "You are a baby.")
+
+elif age < 5:
+    messagebox.showinfo('what you are', "You are a toddler.")
+
+elif age == 11:
+    messagebox.showinfo('what you are', "You are pretty awesome.")
+
+elif age < 12:
+    messagebox.showinfo('what you are', "You are a kid.")
+    
+elif age < 19:
+    messagebox.showinfo('what you are', "You are a tenenager.")
+
+elif age < 64:
+    messagebox.showinfo('what you are', "You are an adult.")
+else:
+    messagebox.showinfo('what you are', "You're a homo sapien sapien. Congrats!")
+    ...
+
+

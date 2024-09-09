@@ -22,9 +22,18 @@ you can ask for a string with simpledialog.askstring().
 """
 
 # Import the required modules
+from tkinter import messagebox, simpledialog, Tk # import required modules
 
+window = Tk()     # Create a window object
+window.withdraw() # Hide the window; we just want to see pop ups
+# Hide the window, hint: use the withdraw method
+
+# Ask the user for the first number   
+a1 = simpledialog.askinteger("Calculator", "Insert first number")
+# Ask the user for the second number
+a2 = simpledialog.askinteger("Calculator", "Insert second number")
 # Create a window object
-
+a3 = simpledialog.askfloat("Calculator", "Insert equation symbol")
 # Hide the window, hint: use the withdraw method
 
 # Ask the user for the first number   

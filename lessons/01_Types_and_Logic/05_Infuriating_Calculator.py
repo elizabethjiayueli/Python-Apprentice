@@ -33,7 +33,19 @@ a1 = simpledialog.askinteger("Calculator", "Insert first number")
 # Ask the user for the second number
 a2 = simpledialog.askinteger("Calculator", "Insert second number")
 # Create a window object
-a3 = simpledialog.askfloat("Calculator", "Insert equation symbol")
+a3 = simpledialog.askstring("Calculator", """Insert the name of the operation you are performing: 1 for Addition, 2 for Subtraction, 
+                                  3 for Multiplication, 4 for Division""")
+if a3 == "1":
+   a = a1 + a2
+elif a3 == "2":
+   a = a1 - a2
+elif a3 == "4":
+   a = a1/a2
+elif a3 == "3":
+   a = a1*a2
+else:
+   a = a1*a2
+messagebox.showinfo("Your Answer", a)
 # Hide the window, hint: use the withdraw method
 
 # Ask the user for the first number   

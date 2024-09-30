@@ -31,7 +31,10 @@ at the bottom of the editor screen; this program does not use the GUI.
 """
 
 import random
+from tkinter import messagebox, simpledialog, Tk # import required modules
 
+window = Tk()     # Create a window object
+window.withdraw()
 def ask_integer(prompt):
     """Function to ask the user for an integer"""
     while True:
@@ -42,11 +45,24 @@ def ask_integer(prompt):
 
 
 # Pick the random number
-
-# In your loop:
-
-    # Get the user's guess
-
+number = random.randint(1,1000)
+    # In your loop:
+while True:
+    i = simpledialog.askinteger("GUESS MY RANDOM NUMBER", "Choose a number between 1 and 1000")
+        # Get the user's guess
+    print (i)
+    if i == int(number):
+        messagebox.showinfo("Yay!", "You got it right!!!")
+        break
+    elif i%7 == 0:
+        messagebox.showinfo("Please Start Over", "Click 'ok' to start over")
+        
+    elif i > int(number):
+        messagebox.showinfo("Please Re-Guess", "Your number is too high, please guess again")    
+    elif i < int(number):
+        messagebox.showinfo("Please Re-Guess", "Your number is too low, please guess again.")
+    else:
+        messagebox.showinfo["ERROR"]
     # If the user's guess is divisible by 7, tell the user to start over
 
     # If the user's guess is too high, tell the user

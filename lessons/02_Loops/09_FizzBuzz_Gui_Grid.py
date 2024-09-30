@@ -32,7 +32,7 @@ from guizero import App, Box, Text
 app = App("Numbers Grid", layout="grid")
 for col in range(10):
     for row in range(10):
-        for i in range(50, 149):
+            i = row*10+col
             if i%15 ==0:
                 Text(app, text='🐍', grid=[col, row])
             elif i%5==0:
@@ -41,8 +41,8 @@ for col in range(10):
                 Text(app, text='🍄', grid=[col, row])
             else:
                 sum = 0
-                for x in range(len(i)):
-                    sum = sum + i[x]
+                for x in str(i):
+                    sum = sum + int(x)
 
                     if sum%2==0:
                          Text(app, text=str(i), grid=[col, row], color="blue")

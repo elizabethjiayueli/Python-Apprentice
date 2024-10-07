@@ -25,6 +25,10 @@ an error message will be displayed and new definitions will not be added.
 
 
 def add_definition(db, key, value):
+    db(TextBox.askstring)
+    key == definition_entry
+    value == word_entry
+    db
     """
     Add a new definition to the database.
 
@@ -47,6 +51,7 @@ def add_definition(db, key, value):
 
 
 def delete_definition(db, key):
+    TextBox.destroy(db)
     """
     Deletes the definition associated with the given key from the database.
 
@@ -91,7 +96,7 @@ def update_listbox(db):
     # This function will return a list of definitions to be displayed in the listbox, like
     # the one below. (For your function, you should set this list to the empty list)
     l = [
-        "Item 1: Fake Definition 1",
+        "word_entry: definition_entry",
         "Item 2: Fake Definition 2",
         "Item 3: fake Definition 3"
     ]

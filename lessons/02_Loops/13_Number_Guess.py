@@ -50,7 +50,6 @@ number = random.randint(1,1000)
 while True:
     i = simpledialog.askinteger("GUESS MY RANDOM NUMBER", "Choose a number between 1 and 1000")
         # Get the user's guess
-    print (i)
     if i == int(number):
         messagebox.showinfo("Yay!", "You got it right!!!")
         break

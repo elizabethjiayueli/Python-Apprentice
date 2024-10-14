@@ -25,10 +25,7 @@ an error message will be displayed and new definitions will not be added.
 
 
 def add_definition(db, key, value):
-    db(TextBox.askstring)
-    key == definition_entry
-    value == word_entry
-    db
+    
     """
     Add a new definition to the database.
 
@@ -42,16 +39,19 @@ def add_definition(db, key, value):
 
     If there are already 5 items in the database, an error message is displayed and the new item is not added.
     """
-
+    if len(db) > 5:
+        print("ERROR!! ERROR!! TOO MANY WORDS!!")
+    else:
+        db[key] =  value
     # Check the limit
-
+    pass
     # Set the item in the database
 
-    pass
+
 
 
 def delete_definition(db, key):
-    TextBox.destroy(db)
+    del db[key]
     """
     Deletes the definition associated with the given key from the database.
 
@@ -69,6 +69,9 @@ def delete_definition(db, key):
 
 
 def is_funny(definition):
+    for funny_word in 'fun', 'funny', 'hilarious', 'amusing', 'pants', 'spleen':
+        if funny_word in definition:
+            return True
     """
     Check if the definition is funny, which means it contains one of the words:
 
@@ -95,11 +98,9 @@ def update_listbox(db):
 
     # This function will return a list of definitions to be displayed in the listbox, like
     # the one below. (For your function, you should set this list to the empty list)
-    l = [
-        "word_entry: definition_entry",
-        "Item 2: Fake Definition 2",
-        "Item 3: fake Definition 3"
-    ]
+    l = []
+    for key, value in db.items():
+        l.append(f"{key}: {value}")
 
     # Add each definition to a string
     # iterate over the dict's key-value pairs and turn them into
@@ -141,7 +142,7 @@ def _delete_definition():
     if selected_item:
         word = selected_item.split(":", 1)[0].strip()
         if word in db:
-            del db[word]
+            delete_definition(db, word)
             _update_listbox(db)
 
 # Main app

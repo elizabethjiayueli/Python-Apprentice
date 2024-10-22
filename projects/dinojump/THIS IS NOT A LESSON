@@ -1,3 +1,5 @@
+
+
 """
 Write a Python program that asks the user for two numbers. The program should
 display the sum of the two numbers.
@@ -15,15 +17,16 @@ at the comments and the code snippets in the previous lessons, like
 from tkinter import messagebox, simpledialog, Tk # import required modules
 window = Tk()     # Create a window object
 window.withdraw() # Hide the window; we just want to see pop ups
-# Hide the window, hint: use the withdraw method
-
-# Ask the user for the first number   
-a1 = simpledialog.askinteger("Adding Calculator", "Insert first number")
-# Ask the user for the second number
-a2 = simpledialog.askinteger("Adding Calculator", "Insert second number")
-# Display the sum of the two numbers 
-a = a1 + a2
-
-messagebox.showinfo("Your Answer:", a)
-# Keep the window open
-
+words = []
+game = "play"
+for i in range(100000000000):
+    new = simpledialog.askstring("3-letter game", "Enter any 3-letter word")
+    if len(new)>3 or len(new)<3:
+        messagebox.showinfo("NOPE NOT A 3 LETTER WORD." "GAME OVER")
+        messagebox.showinfo("YOUR SCORE" "You know ", len(words), "3-letter words")
+        break
+    elif new in words:
+        messagebox.showinfo("You already said that word, try again")
+    else:
+        words.append[new]
+        pass

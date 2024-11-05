@@ -18,7 +18,7 @@ screen.bgcolor("white")
 walker = turtle.Turtle()
 walker.shape("turtle")
 walker.penup()
-walker.speed(0)  # Set to the maximum speed
+walker.speed(8)  # Set to the maximum speed
 walker.goto(0, 0)  # Start in the middle of the grid
 walker.pendown()
 

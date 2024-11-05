@@ -32,5 +32,5 @@ for i in range(10):
         pass
 
 #11. Outside of the loop, tell the user they lost
-messagebox.showinfo("HIGH LOW GAME", "YOU LOST, TRY AGAIN")
+messagebox.showerror("HIGH LOW GAME", "YOU LOST, TRY AGAIN")
 window.mainloop()

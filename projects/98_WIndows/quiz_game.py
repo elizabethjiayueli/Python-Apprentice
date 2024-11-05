@@ -9,16 +9,7 @@ window.withdraw()  # ;
 # 1. Create a variable to hold the user's score. Set it equal to zero.
 score = 0  # ;
 
-response = simpledialog.askstring(None, "Which is better, Python or Java?")  # ;
-
-if response.lower() == "python":  # ;
-    score += 1  # ;
-    print("Correct! Your score is " + str(score))  # ;
-else:  # ;
-    score -= 1  # ;
-    messagebox.showerror(message="WRONG! It's Python of course!")  # ;
-
-messagebox.showinfo(message="Your final score is " + str(score))  # ;
+ # ;
 # ASK A QUESTION AND CHECK THE ANSWER
 
 # // 2. Ask the user a question

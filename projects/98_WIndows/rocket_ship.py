@@ -24,12 +24,14 @@ def mouse_pressed(event):
     y = event.y
 
     # 1. Add details to your rocket to make it look better. You can look at rocket.png for inspiration.
+    r = 80
+    canvas.create_oval(x - r, y - r + 135, x + r, y + r + 135, fill="red")  # ;
+    r = 50  # ;
+    canvas.create_oval(x - r, y - r + 110, x + r, y + r + 110, fill="orange")  # ;
 
-    r = 40  # ;
-    canvas.create_oval(x - r, y - r + 100, x + r, y + r + 100, fill="orange")  # ;
-
-    r = 20  # ;
-    canvas.create_oval(x - r, y - r + 100, x + r, y + r + 100, fill="red")  # ;
+    r = 25  # ;
+    canvas.create_oval(x - r, y - r + 103, x + r, y + r + 103, fill="yellow")  # ;
+    
 
     # this defines the x and y coordinated of all three points of a triangle
     points = [x, y, x + 50, y + 90, x - 50, y + 90]

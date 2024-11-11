@@ -27,14 +27,12 @@ def in_or_out(db):
                 days = simpledialog.askinteger("HOTEL MANAGEMENT", "How many days are you going to stay?")
                 price = 200*days + peeps_num
             elif int(peeps_num) >= 7:
-                num_rooms = simpledialog.askinteger("HOTEL MANAGEMENT", "Please choose 2 or more rooms. Enter the number of rooms you would like.")
-                room = simpledialog.askstring("Which rooms would you like?", rooms)
+                num_rooms = (simpledialog.askinteger("HOTEL MANAGEMENT", "Please choose 2 or more rooms. Enter the number of rooms you would like."))
+                for i in range(num_rooms):
+                    room = simpledialog.askstring("Which rooms would you like?", rooms)
+                    rooms.remove(room)
                 days = simpledialog.askinteger("HOTEL MANAGEMENT", "How many days are you going to stay?")
                 price = 200*days + peeps_num * num_rooms
-                if room in db:
-                    messagebox.showerror("HOTEL MANAGEMENT", "Room is already taken. try again.")
-                    room = simpledialog.askstring("Which rooms would you like?", rooms)
-                    
             db[ask] = room
             messagebox.showinfo("Your price is $", price)
         elif check == "check out" or check == "out":

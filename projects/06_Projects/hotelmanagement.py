@@ -13,12 +13,10 @@ window = Tk()
 window.withdraw()
 db = {}
 
-running = True
-
 def in_or_out(db):
     
     rooms = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-    while running:
+    while True:
         print(db)
         ask = simpledialog.askstring("HOTEL MANAGEMENT", "What is your name?")
         check = simpledialog.askstring("HOTEL MANAGEMENT", "Would you like to check in or check out?")
@@ -39,7 +37,7 @@ def in_or_out(db):
             messagebox.showinfo("HOTEL MANAGEMENT",f"Your price is $ {price}")
         elif check == "check out" or check == "out":
             if ask in db:
-                value = db.pop(ask) 
+                db.pop(ask) 
                 messagebox.showinfo("HOTEL MANAGEMENT", "I hope you enjoyed your stay!")
             else:
                 messagebox.showerror("error")
@@ -50,7 +48,7 @@ def in_or_out(db):
         if continue_ == "yes":
             pass
         elif continue_ == "no":
-            running = False
+            break
 
 def room_func(rooms):
     room = simpledialog.askinteger("Which room would you like?", rooms)
